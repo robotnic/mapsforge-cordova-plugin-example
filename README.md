@@ -9,6 +9,6 @@ To use it you need the map file on your sdcard.
 
 Map file name
 -------------------
-You have to filename in "js/main.js"
+You have to change the filename in "js/main.js"
 
 
