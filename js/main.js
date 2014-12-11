@@ -1,8 +1,10 @@
-// create a map in the "map" div, set the view to a given place and zoom
-var map = L.map('map').setView([48.205, 16.3], 13);
-var mapfile="/mnt/sdcard/Download/austria.map";
+var mapfile="/mnt/sdcard/Download/austria.map";   <-------------- change this
 
-// add an OpenStreetMap tile layer
+
+var map = L.map('map').setView([48.205, 16.3], 13);
+
+
+// define an tile layers
 
 var layers={
    osm:L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -13,6 +15,7 @@ var layers={
    })
 };
 
+//add osm layer to map
 layers.osm.addTo(map);
 
 document.addEventListener("deviceready", function() {
