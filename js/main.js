@@ -1,4 +1,4 @@
-var mapfile="/mnt/sdcard/Download/austria.map";   <-------------- change this
+var mapfile="/mnt/sdcard/Download/austria.map"; //  <-------------- change this
 
 
 var map = L.map('map').setView([48.205, 16.3], 13);
@@ -25,7 +25,11 @@ document.addEventListener("deviceready", function() {
             onSuccess: function() {
                 console.log("map file loaded");
                 layers.offline.addTo(map);
-                layerControl();
+
+                L.control.layers({
+                    "OpenStreetMap":layers.osm,
+                    "Offline":layers.offline 
+                }).addTo(map);
 
             },
             onError: function(error) {
@@ -37,10 +41,4 @@ document.addEventListener("deviceready", function() {
     }
 }, false);
 
-function layerControl() {
-    L.control.layers({
-        "OpenStreetMap":layers.osm,
-        "Offline":layers.offline 
-    }).addTo(map);
-}
 

@@ -5,7 +5,7 @@ https://github.com/kriskowal/q
 */
 
 
-var mapfile="/mnt/sdcard/Download/austria.map";   <-------------- change this
+var mapfile="/mnt/sdcard/Download/austria.map";  // <-------------- change this
 
 
 var map = L.map('map').setView([48.205, 16.3], 13);
