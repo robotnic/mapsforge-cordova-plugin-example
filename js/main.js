@@ -26,6 +26,7 @@ document.addEventListener("deviceready", function() {
                 console.log("map file loaded");
                 layers.offline.addTo(map);
 
+                //the layer button top right 
                 L.control.layers({
                     "OpenStreetMap":layers.osm,
                     "Offline":layers.offline 
