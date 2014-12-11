@@ -12,14 +12,15 @@ L.OfflineTileLayer = L.TileLayer.extend({
             var start = new Date().getTime();
             mapsforge.cache.getTile([x, y, zoom], {
                 onSuccess: function(result) {
-                    console.log("1 " + (new Date().getTime() - start));
+                    console.log("1 " + (new Date().getTime() - start)+"ms");
                     tile.src = result;
                 },
                 onError: function() {
                     tile.src = "path to an error image";
                 }
             });
-            console.log("2 " + (new Date().getTime() - start));
+            console.log("2 " + (new Date().getTime() - start)+"ms <--- should be 0ms");
+            //adb logcat |grep Console 
         } else {
             tile.src = "path to an error image";
         }

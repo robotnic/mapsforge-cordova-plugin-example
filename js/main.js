@@ -4,7 +4,7 @@ var mapfile="/mnt/sdcard/Download/austria.map"; //  <-------------- change this
 var map = L.map('map').setView([48.205, 16.3], 13);
 
 
-// define an tile layers
+// define the tile layers
 
 var layers={
    osm:L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -24,7 +24,7 @@ document.addEventListener("deviceready", function() {
         mapsforge.cache.initialize(mapfile, {
             onSuccess: function() {
                 console.log("map file loaded");
-                layers.offline.addTo(map);
+                //layers.offline.addTo(map);
 
                 //the layer button top right 
                 L.control.layers({
