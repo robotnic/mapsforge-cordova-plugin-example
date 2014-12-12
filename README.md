@@ -11,4 +11,8 @@ Map file name
 -------------------
 You have to change the filename in "js/main.js"
 
+Todo
+-----
+add a file chooser. 
+
 
