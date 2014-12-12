@@ -11,7 +11,8 @@ var layers={
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
    }),
    offline:L.offlineTileLayer({
-       maxZoom: 18
+       maxZoom: 18,
+       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
    })
 };
 
@@ -21,10 +22,9 @@ layers.osm.addTo(map);
 document.addEventListener("deviceready", function() {
     console.log("deviceready");
     if(typeof(mapsforge)!=="undefined"){
-        mapsforge.cache.initialize(mapfile, {
-            onSuccess: function() {
+        mapsforge.cache.initialize(mapfile, 
+            function() {
                 console.log("map file loaded");
-                //layers.offline.addTo(map);
 
                 //the layer button top right 
                 L.control.layers({
@@ -33,10 +33,9 @@ document.addEventListener("deviceready", function() {
                 }).addTo(map);
 
             },
-            onError: function(error) {
+            function(error) {
                 console.log("error loading map file: "+mapfile);
-            }
-        });
+            });
     }else{
         console.log("mapsforge not loaded");
     }
