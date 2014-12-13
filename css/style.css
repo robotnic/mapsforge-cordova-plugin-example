@@ -19,6 +19,12 @@ body{
     display: block;
     box-shadow:0px 0px 5px rgba(0,0,0,0.4);
 }
+img{
+    border-left:1px solid white;
+    border-bottom:1px solid red;
+    border-right:1px solid blue;
+    border-top:1px solid green;
+}
 
 h3{
     margin-top:15px;

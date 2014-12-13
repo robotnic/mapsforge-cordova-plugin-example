@@ -19,7 +19,7 @@ L.OfflineTileLayer = L.TileLayer.extend({
                     tile.src = "path to an error image";
                 }
             );
-            console.log("2 " + (new Date().getTime() - start)+"ms <--- should be 0ms");
+            console.log("2 " + (new Date().getTime() - start)+"ms");
             //adb logcat |grep Console 
         } else {
             tile.src = "path to an error image";
