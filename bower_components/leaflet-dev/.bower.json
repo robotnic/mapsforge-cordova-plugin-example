@@ -1,0 +1,25 @@
+{
+  "name": "leaflet",
+  "version": "0.8.0-dev",
+  "main": [
+    "leaflet.js",
+    "leaflet.css"
+  ],
+  "description": "Leaflet dev version bower package",
+  "ignore": [
+    ".DS_Store",
+    ".git",
+    ".gitignore"
+  ],
+  "homepage": "https://github.com/elesdoar/leaflet-dev.git",
+  "_release": "0.8.0-dev",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.8.0-dev",
+    "commit": "b518e49e7f64846918a7a18210f2ff29ceb9fc6d"
+  },
+  "_source": "git://github.com/elesdoar/leaflet-dev.git",
+  "_target": "~0.8.0-dev",
+  "_originalSource": "leaflet-dev",
+  "_direct": true
+}

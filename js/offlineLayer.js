@@ -1,45 +1,41 @@
 L.OfflineTileLayer = L.TileLayer.extend({
-    getTileUrl: function(tilePoint, tile) {
-        if (typeof(mapsforge)=="undefined") {
-            console.warn("mapsforge not loaded");
-            return;
+
+    createTile: function (coords, done) {
+        var tile = document.createElement('img');
+
+        tile.onload = L.bind(this._tileOnLoad, this, done, tile);
+        tile.onerror = L.bind(this._tileOnError, this, done, tile);
+
+        if (this.options.crossOrigin) {
+            tile.crossOrigin = '';
         }
-        var zoom = tilePoint.z,
-            x = tilePoint.x,
-            y = tilePoint.y;
+
+        /*
+         Alt tag is set to empty string to keep screen readers from reading URL and for compliance reasons
+         http://www.w3.org/TR/WCAG20-TECHS/H67
+        */
+        tile.alt = '';
+
+        var x = coords.x;
+        var y = this.options.tms ? this._globalTileRange.max.y - coords.y : coords.y;
+        var zoom = this._getZoomForUrl();
+
+        // Tile path to return
+        var errorUrl = this.options.errorTileUrl;
 
         if (mapsforge.cache) {
-            var start = new Date().getTime();
-            mapsforge.cache.getTile([x, y, zoom], 
-                function(result) {
-                    console.log("1 " + (new Date().getTime() - start)+"ms");
-                    tile.src = result;
-                },
-                function() {
-                    tile.src = "path to an error image";
-                }
-            );
-            console.log("2 " + (new Date().getTime() - start)+"ms");
-            //adb logcat |grep Console 
-        } else {
-            tile.src = "path to an error image";
+            mapsforge.cache.getTile([ x, y, zoom ], function(result) {
+                tile.src = result;
+            }, function(error) {
+                tile.src = errorUrl;
+                console.log(error);
+            });
         }
-    },
 
-    _loadTile: function(tile, tilePoint) {
-        tile._layer = this;
-        tile.onload = this._tileOnLoad;
-        tile.onerror = this._tileOnError;
-
-        this._adjustTilePoint(tilePoint);
-        this.getTileUrl(tilePoint, tile);
-
-        this.fire('tileloadstart', {
-            tile: tile,
-            url: tile.src
-        });
+        return tile;
     }
 });
+
 
 L.offlineTileLayer = function(options) {
     return new L.OfflineTileLayer(null, options);
