@@ -1,9 +1,8 @@
 mapsforge-cordova-plugin-example
 ================================
 
-example for <a href="https://github.com/afsuarez/mapsforge-cordova-plugin">mapsforge cordova plugin</a>
-
-This is a very basic example to mapsforge-cordova-plugin.
+Follow install instructions at <a href="https://github.com/afsuarez/mapsforge-cordova-plugin">mapsforge cordova plugin</a>.
+Copy this example to the "www" folder.
 
 To use it you need the map file on your sdcard. 
 
