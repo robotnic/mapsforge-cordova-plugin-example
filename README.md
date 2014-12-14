@@ -10,6 +10,7 @@ To use it you need the map file on your sdcard.
 Map file name
 -------------------
 You have to change the filename in "js/main.js"
+Or use <a href="http://download.mapsforge.org/maps/europe/austria.map">austria.map</a>
 
 Todo
 -----
