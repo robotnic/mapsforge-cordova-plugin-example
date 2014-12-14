@@ -1,7 +1,7 @@
 mapsforge-cordova-plugin-example
 ================================
 
-example for mapsforge cordova plugin
+example for <a href="https://github.com/afsuarez/mapsforge-cordova-plugin">mapsforge cordova plugin</a>
 
 This is a very basic example to mapsforge-cordova-plugin.
 
