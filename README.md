@@ -16,4 +16,6 @@ Todo
 -----
 add a file chooser. 
 
-
+Screenshot
+-----------
+<img src="https://cloud.githubusercontent.com/assets/219020/5426342/ecb5630a-834a-11e4-96dd-b645319057b5.jpg"/>
